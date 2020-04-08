@@ -1,0 +1,107 @@
+<div class="ui form">
+    <div class="ui grid two compact segments horizontal">
+
+        <div class="ui segment ten wide column">
+            <div class="ui top attached label">question panel</div>
+            <div class="field" id='question_field'>
+                <h3 class="ui header" style="display:none">
+                    <label id="question_number"></label>
+                </h3>
+                <h3 class="ui header">
+                    <label id="question_title"></label></h3>
+                <select class="ui fluid dropdown" id="include" name="include">
+                    <option value="NULL">I don't know/I don't want to answer</option>
+                    <option value="INC">Yes</option>
+                    <option value="EXC">No</option>
+                </select>
+
+                <div class="ui divider hidden"></div>
+
+                <div class="ui container" id="value_input_container" style="display:none;">
+                    <div class="field">
+                        <h3 class="ui header">
+                            <label>Please enter the value: </label></h3>
+                        <input type="number" id="measurement_value">
+                    </div>
+                </div>
+                <div class="ui container" id="time_container" style="display:none;">
+                    <h3 class="ui header">
+                        <label>Could you provide the start and end time (Optional) </label></h3>
+                    <div class="two fields horizontal">
+
+                        <div class="field">
+                            <label>Start date</label>
+                            <div class="ui calendar" id="rangestart">
+                                <div class="ui input left icon">
+                                    <i class="calendar icon"></i>
+                                    <input type="text" placeholder="Start">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>End date (Press today if it is ongoing)</label>
+                            <div class="ui calendar" id="rangeend">
+                                <div class="ui input left icon">
+                                    <i class="calendar icon"></i>
+                                    <input type="text" placeholder="End">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui divider hidden"></div>
+                <h3 class="ui header">
+                    <label id="domain_check">What type of question do you wish to answer next?</label>
+                </h3>
+                <select class="ui fluid dropdown" id="domain" name="domain">
+                    <option value="condition">Condition</option>
+                    <option value="measurement">Measurement</option>
+                    <option value="drug">Drug</option>
+                    <option value="observation">Observation</option>
+                    <option value="procedure">Procedure</option>
+                    <option value="all" selected>Any</option>
+                </select>
+            </div>
+
+            <div class="ui green submit button" id="confirmbutton">Confirm</div>
+            <div id="close_question" class="ui red button" onclick="">Exit Questionnaire</div>
+
+
+        </div>
+
+        <div class="ui segment six wide column" style="overflow:auto;height: 350px;">
+            <div class="ui top attached label">navigation panel</div>
+            <div class="ui container" id="go_back_container" >
+                <div class="field">
+                    <div class="ui container">
+                        <h4> Go back to question: </h4>
+                        <div class="ui divided selection list" id="question_tags">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="ui tiny modal" id="close_modal" style="position: fixed; top: 30%;">
+    <div class="header">
+        Exit Questionnaire
+    </div>
+    <div class="content">
+        <p> You will exit back out to the original list of trials returned by the search of ClinicalTrials.gov. Do you
+            wish to continue? </p>
+    </div>
+    <div class="actions">
+        <div class="ui negative button">
+            No
+        </div>
+        <div class="ui positive right labeled icon button" id="confirm_close_question">
+            Yes
+            <i class="checkmark icon"></i>
+        </div>
+    </div>
+</div>
