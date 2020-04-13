@@ -1,2 +1,3 @@
 /dquest-flask/app/templates/backup/
 /dquest-flask/venv/
+/dquest-flask/app/lib/log.py
